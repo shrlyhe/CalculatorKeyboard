@@ -14,6 +14,8 @@
 		D85661DA1CB71E7E005C2889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85661D81CB71E7E005C2889 /* LaunchScreen.storyboard */; };
 		D85661E51CB71E7F005C2889 /* CalculatorKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85661E41CB71E7F005C2889 /* CalculatorKeyboardTests.swift */; };
 		D85661F01CB71E7F005C2889 /* CalculatorKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85661EF1CB71E7F005C2889 /* CalculatorKeyboardUITests.swift */; };
+		D85662041CB722CB005C2889 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85662031CB722CB005C2889 /* KeyboardViewController.swift */; };
+		D85662081CB722CB005C2889 /* CalculationKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D85662011CB722CB005C2889 /* CalculationKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,28 @@
 			remoteGlobalIDString = D85661CB1CB71E7E005C2889;
 			remoteInfo = CalculatorKeyboard;
 		};
+		D85662061CB722CB005C2889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D85661C41CB71E7E005C2889 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D85662001CB722CB005C2889;
+			remoteInfo = CalculationKeyboard;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D856620C1CB722CB005C2889 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D85662081CB722CB005C2889 /* CalculationKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D85661CC1CB71E7E005C2889 /* CalculatorKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +70,9 @@
 		D85661EB1CB71E7F005C2889 /* CalculatorKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85661EF1CB71E7F005C2889 /* CalculatorKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorKeyboardUITests.swift; sourceTree = "<group>"; };
 		D85661F11CB71E7F005C2889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85662011CB722CB005C2889 /* CalculationKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalculationKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D85662031CB722CB005C2889 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		D85662051CB722CB005C2889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D85661FE1CB722CB005C2889 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +113,7 @@
 				D85661CE1CB71E7E005C2889 /* CalculatorKeyboard */,
 				D85661E31CB71E7F005C2889 /* CalculatorKeyboardTests */,
 				D85661EE1CB71E7F005C2889 /* CalculatorKeyboardUITests */,
+				D85662021CB722CB005C2889 /* CalculationKeyboard */,
 				D85661CD1CB71E7E005C2889 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +124,7 @@
 				D85661CC1CB71E7E005C2889 /* CalculatorKeyboard.app */,
 				D85661E01CB71E7F005C2889 /* CalculatorKeyboardTests.xctest */,
 				D85661EB1CB71E7F005C2889 /* CalculatorKeyboardUITests.xctest */,
+				D85662011CB722CB005C2889 /* CalculationKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +160,15 @@
 			path = CalculatorKeyboardUITests;
 			sourceTree = "<group>";
 		};
+		D85662021CB722CB005C2889 /* CalculationKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D85662031CB722CB005C2889 /* KeyboardViewController.swift */,
+				D85662051CB722CB005C2889 /* Info.plist */,
+			);
+			path = CalculationKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +179,12 @@
 				D85661C81CB71E7E005C2889 /* Sources */,
 				D85661C91CB71E7E005C2889 /* Frameworks */,
 				D85661CA1CB71E7E005C2889 /* Resources */,
+				D856620C1CB722CB005C2889 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D85662071CB722CB005C2889 /* PBXTargetDependency */,
 			);
 			name = CalculatorKeyboard;
 			productName = CalculatorKeyboard;
@@ -181,6 +227,23 @@
 			productReference = D85661EB1CB71E7F005C2889 /* CalculatorKeyboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D85662001CB722CB005C2889 /* CalculationKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D85662091CB722CB005C2889 /* Build configuration list for PBXNativeTarget "CalculationKeyboard" */;
+			buildPhases = (
+				D85661FD1CB722CB005C2889 /* Sources */,
+				D85661FE1CB722CB005C2889 /* Frameworks */,
+				D85661FF1CB722CB005C2889 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalculationKeyboard;
+			productName = CalculationKeyboard;
+			productReference = D85662011CB722CB005C2889 /* CalculationKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +265,9 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = D85661CB1CB71E7E005C2889;
 					};
+					D85662001CB722CB005C2889 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = D85661C71CB71E7E005C2889 /* Build configuration list for PBXProject "CalculatorKeyboard" */;
@@ -220,6 +286,7 @@
 				D85661CB1CB71E7E005C2889 /* CalculatorKeyboard */,
 				D85661DF1CB71E7F005C2889 /* CalculatorKeyboardTests */,
 				D85661EA1CB71E7F005C2889 /* CalculatorKeyboardUITests */,
+				D85662001CB722CB005C2889 /* CalculationKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +310,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D85661E91CB71E7F005C2889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85661FF1CB722CB005C2889 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,6 +351,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D85661FD1CB722CB005C2889 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85662041CB722CB005C2889 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +371,11 @@
 			isa = PBXTargetDependency;
 			target = D85661CB1CB71E7E005C2889 /* CalculatorKeyboard */;
 			targetProxy = D85661EC1CB71E7F005C2889 /* PBXContainerItemProxy */;
+		};
+		D85662071CB722CB005C2889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D85662001CB722CB005C2889 /* CalculationKeyboard */;
+			targetProxy = D85662061CB722CB005C2889 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CalculatorKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shirleyhe.CalculatorKeyboard;
@@ -410,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CalculatorKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shirleyhe.CalculatorKeyboard;
@@ -463,6 +552,28 @@
 			};
 			name = Release;
 		};
+		D856620A1CB722CB005C2889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CalculationKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shirleyhe.CalculatorKeyboard.CalculationKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D856620B1CB722CB005C2889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CalculationKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shirleyhe.CalculatorKeyboard.CalculationKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,6 +607,14 @@
 			buildConfigurations = (
 				D85661FB1CB71E7F005C2889 /* Debug */,
 				D85661FC1CB71E7F005C2889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D85662091CB722CB005C2889 /* Build configuration list for PBXNativeTarget "CalculationKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D856620A1CB722CB005C2889 /* Debug */,
+				D856620B1CB722CB005C2889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
