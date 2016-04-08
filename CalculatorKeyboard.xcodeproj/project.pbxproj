@@ -16,6 +16,8 @@
 		D85661F01CB71E7F005C2889 /* CalculatorKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85661EF1CB71E7F005C2889 /* CalculatorKeyboardUITests.swift */; };
 		D85662041CB722CB005C2889 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85662031CB722CB005C2889 /* KeyboardViewController.swift */; };
 		D85662081CB722CB005C2889 /* CalculationKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D85662011CB722CB005C2889 /* CalculationKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D856620E1CB727BA005C2889 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D856620D1CB727BA005C2889 /* Model.swift */; };
+		D85662101CB72821005C2889 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D856620F1CB72821005C2889 /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		D85662011CB722CB005C2889 /* CalculationKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalculationKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85662031CB722CB005C2889 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		D85662051CB722CB005C2889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D856620D1CB727BA005C2889 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D856620F1CB72821005C2889 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +167,9 @@
 		D85662021CB722CB005C2889 /* CalculationKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				D856620F1CB72821005C2889 /* View.xib */,
 				D85662031CB722CB005C2889 /* KeyboardViewController.swift */,
+				D856620D1CB727BA005C2889 /* Model.swift */,
 				D85662051CB722CB005C2889 /* Info.plist */,
 			);
 			path = CalculationKeyboard;
@@ -320,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85662101CB72821005C2889 /* View.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D85662041CB722CB005C2889 /* KeyboardViewController.swift in Sources */,
+				D856620E1CB727BA005C2889 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
