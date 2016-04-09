@@ -7,3 +7,21 @@
 //
 
 import UIKit
+
+var answer = Int()
+
+func subtract(intOne: Int, intTwo: Int) {
+    answer = intOne - intTwo
+}
+
+func addition(intOne: Int, intTwo: Int) {
+    answer = intOne + intTwo
+}
+
+func multiply(intOne: Int, intTwo: Int) {
+    answer = intOne * intTwo
+}
+
+func divide(intOne: Int, intTwo: Int) {
+    answer = intOne / intTwo
+}

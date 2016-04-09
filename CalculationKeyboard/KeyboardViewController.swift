@@ -13,17 +13,17 @@ class KeyboardViewController: UIInputViewController {
     var firstNumber = 0
     var secondNumber = 0
     var operation = ""
-    
     var keyboardView: UIView!
+    var calculateAgain = true
     
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var calculatorLabel: UILabel!
 
 
 
     override func updateViewConstraints() {
         super.updateViewConstraints()
-    
-        // Add custom view sizing constraints here
+
     }
 
     override func viewDidLoad() {
@@ -32,6 +32,78 @@ class KeyboardViewController: UIInputViewController {
         clear()
     }
     
+    @IBAction func calculate() {
+        if firstNumber != 0 && operation != "" && calculatorLabel.text != "" {
+            
+            if let anInt = Int(calculatorLabel.text!) {
+                secondNumber = anInt
+            }
+            if secondNumber != 0 && calculateAgain == true {
+                
+                calculateAgain = false
+                submitButton.enabled = true
+                
+                print(firstNumber)
+                print(secondNumber)
+                print(operation)
+                
+                if operation == "+" {
+                    addition(firstNumber, intTwo: secondNumber)
+                    updateLabel()
+                }
+                else if operation == "-" {
+                    subtract(firstNumber, intTwo: secondNumber)
+                    updateLabel()
+                }
+                else if operation == "x" {
+                    multiply(firstNumber, intTwo: secondNumber)
+                    updateLabel()
+                }
+                else if operation == "/" {
+                    divide(firstNumber, intTwo: secondNumber)
+                    updateLabel()
+                }
+            }
+        }
+    }
+    //convert to string to display
+    func updateLabel() {
+        calculatorLabel.text = String(answer)
+    }
+    @IBAction func operationPressed(sender: UIButton!) {
+        let operationPressed = sender.titleLabel?.text
+        if firstNumber == 0 && secondNumber == 0 && calculatorLabel != "" && operation == "" {
+            if calculatorLabel.text != "" {
+                
+            
+            if let operationTouch = operationPressed {
+                operation = operationTouch
+            }
+            //convert string to int
+            if let anInt = Int(calculatorLabel.text!) {
+                firstNumber = anInt
+                calculatorLabel.text = ""
+                
+            }
+            
+        }
+        //prints "2: +"
+        print("\(firstNumber): \(operation)")
+    }
+        else {
+            print("do nothing")
+        }
+    }
+    
+    @IBAction func submit() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText(calculatorLabel.text!)
+    }
+    
+    @IBAction func hideKeyboard() {
+        dismissKeyboard()
+    }
+
     @IBAction func deleteText() {
         let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.deleteBackward()
@@ -46,6 +118,8 @@ class KeyboardViewController: UIInputViewController {
         firstNumber = 0
         secondNumber = 0
         operation = ""
+        calculateAgain = true
+        submitButton.enabled = false
         
     }
     
@@ -58,7 +132,6 @@ class KeyboardViewController: UIInputViewController {
         else {
             calculatorLabel.text = calculatorLabel.text! + numberPressed!
         }
-        
         
     }
     
