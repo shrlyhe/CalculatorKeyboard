@@ -9,8 +9,16 @@
 import UIKit
 
 class KeyboardViewController: UIInputViewController {
+    
+    var firstNumber = 0
+    var secondNumber = 0
+    var operation = ""
+    
+    var keyboardView: UIView!
+    
+    @IBOutlet weak var calculatorLabel: UILabel!
 
-    @IBOutlet var nextKeyboardButton: UIButton!
+
 
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -20,24 +28,48 @@ class KeyboardViewController: UIInputViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNextButton()
-  
+        loadKeyboardFunction()
+        clear()
     }
-    func addNextButton() {
+    
+    @IBAction func deleteText() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.deleteBackward()
+    }
+    
+    @IBAction func goToNextKeyboard() {
+        advanceToNextInputMode()
+    }
+    
+    @IBAction func clear() {
+        calculatorLabel.text = ""
+        firstNumber = 0
+        secondNumber = 0
+        operation = ""
         
-        self.nextKeyboardButton = UIButton(type: .System)
+    }
+    
+    @IBAction func numberPressed(sender: UIButton!) {
+        let numberPressed = sender.titleLabel?.text
         
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
+        if firstNumber != 0 && secondNumber != 0 {
+            //do nothing
+        }
+        else {
+            calculatorLabel.text = calculatorLabel.text! + numberPressed!
+        }
         
-        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
         
-        self.view.addSubview(self.nextKeyboardButton)
+    }
+    
+    //adding keyboard programmatically
+    func loadKeyboardFunction() {
+        let keyboardNib = UINib(nibName: "View", bundle: nil)
+        //changing from Nib to UI
+        keyboardView = keyboardNib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        view.backgroundColor = keyboardView.backgroundColor
+        view.addSubview(keyboardView)
         
-        self.nextKeyboardButton.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.nextKeyboardButton.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,14 +84,7 @@ class KeyboardViewController: UIInputViewController {
     override func textDidChange(textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
     
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.Dark {
-            textColor = UIColor.whiteColor()
-        } else {
-            textColor = UIColor.blackColor()
-        }
-        self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
+
     }
 
 }
